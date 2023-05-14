@@ -34,11 +34,14 @@ const resolver = {
 // create a DID instance
 const did = new DID({ resolver });
 
+console.log(did,'did');
 
 
 // set DID instance
 ceramic.did = did;
 
 const doc = await TileDocument.create(ceramic, { broadcast: "Hello" });
+console.log(doc, 'doc');
+
 
 export const users: any = { doc };

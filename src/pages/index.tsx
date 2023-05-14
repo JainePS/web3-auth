@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 
+import styles from "../styles/Home.module.css"
+
 const Home: NextPage = () => {
   const [account, setAccount] = useState("");
   const [connection, setConnection] = useState(false);
@@ -42,20 +44,18 @@ const Home: NextPage = () => {
     );
     const data = await response.json();
     setLoggedIn(data.authenticated);
-  }
-  console.log('jaine');
-  
+  }  
 
   return (
-    <div>
+    <div className={styles.container}>
       {!connection && (
-        <button  onClick={connect}>
+        <button  onClick={connect} className={styles.button}>
           Connect Wallet
         </button>
       )}
       {connection && !loggedIn && (
         <>
-          <button onClick={Login}>
+          <button className={styles.button} onClick={Login}>
             Login
           </button>
         </>

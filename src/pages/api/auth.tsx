@@ -5,6 +5,9 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
   const { address } = req.query;
   let user = users[address as string];
 
+  console.log(address);
+  
+
   // check if user exists in register
   if (!user) {
     user = {
