@@ -11,11 +11,13 @@ const API_URL = "https://ceramic-clay.3boxlabs.com";
 
 // generate seed
 const seed = randomBytes(32);
+console.log(seed, 'seed');
+
 
 // create provider
 const provider = new Ed25519Provider(seed);
 
-// create ceramic instance
+// conncet to a Ceramic node
 const ceramic = new CeramicClient(API_URL);
 
 // set provider to ceramic
@@ -32,9 +34,14 @@ const resolver = {
 // create a DID instance
 const did = new DID({ resolver });
 
+console.log(did,'did');
+
+
 // set DID instance
 ceramic.did = did;
 
 const doc = await TileDocument.create(ceramic, { broadcast: "Hello" });
+console.log(doc, 'doc');
+
 
 export const users: any = { doc };
