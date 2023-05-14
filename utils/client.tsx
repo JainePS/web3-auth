@@ -23,7 +23,8 @@ const ceramic = new CeramicClient(API_URL);
 // set provider to ceramic
 ceramic.did?.setProvider(provider);
 
-await ceramic.did?.authenticate();
+const ceramicProvider = async() => await ceramic.did?.authenticate();
+ceramicProvider();
 
 // DID methods to authenticate writes
 const resolver = {
