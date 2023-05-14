@@ -6,8 +6,6 @@ Ceramic is a decentralized network that brings the data to web3.
 https://github.com/JainePS/web3-auth/assets/92764262/24c46a85-761b-4765-ac31-4e3ff8c97ca4
 
 
-
-
 ## Getting Started
 
 First, run the development server:
